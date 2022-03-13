@@ -1,12 +1,18 @@
 <script>
 
-    let firstNumber = "0";
+    let firstNumber;
     let firstNumSys = "2";
 
-    let secNumber = "0";
+    let secNumber;
     let secNumSys = "10";
     
 
+
+    /**
+     * 
+     * @param {string} num Number in the acc. numeral system; for exp. "AF5"
+     * @param {number} numeralSystem the according numberal system; for exp. 16
+     */
 
     function convertToDecimalSystem(num /*Type string*/, numeralSystem /*Type number*/) { 
         let dezimalNum = 0;
@@ -16,7 +22,6 @@
         let numArray = [...num] 
         /* Reverse the order of the number digits so it reads from the right to the left */
         numArray.reverse(); 
-        
 
         for (let i = 0; i < numArray.length; i++) {
 
@@ -59,8 +64,6 @@
         return dezimalNum;
     };
 
-    console.log(convertToDecimalSystem("AF5", 16))
-
 
 </script>
 
@@ -87,8 +90,8 @@
         <option value="15">15</option>
         <option value="16">16 (Hexadezimal)</option>
     </select>
-    <input type="text" name="firstNum" id="firstNum" bind:value={firstNumber}>
-    <!-- <p on:click={console.log(firstNumber,typeof firstNumber)}>"Hello {firstNumber}"</p> -->
+    <input type="text" name="firstNum" id="firstNum" bind:value={firstNumber} on:input={secNum.value = convertToDecimalSystem(firstNumber, firstNumSys)}>
+    <!-- <p on:click={console.log(secNumber,typeof secNumber)}>"Hello {secNumber}"</p> -->
     
 
 

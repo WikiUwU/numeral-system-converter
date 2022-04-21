@@ -1,4 +1,4 @@
-<script lang="ts">
+<script>
 
 	import Umwandler from "./Umwandler.svelte"
 
